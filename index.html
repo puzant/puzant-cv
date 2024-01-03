@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./public/avatar.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Puzant CV</title>
+  </head>
+
+  <body class="py-4 md:py-8 px-0 md:px-10 bg-bkg" x-data="{ isDarkMode: false }" x-init="initTheme">
+    <div class="flex justify-end md:justify-between w-[95%] md:w-[55%] m-auto">
+      <!-- desktop view navigation -->
+      <div
+        class="hidden md:flex items-center justify-between py-3 px-8 shadow-md border text-sm rounded-3xl w-[75%] m-auto"
+        :class="{ 'bg-[#27272ae6] text-white border-zinc-800': isDarkMode }"
+      >
+        <a class="hover:text-[#B54548] ease-in duration-300" href="#about">About</a>
+        <a class="hover:text-[#B54548] ease-in duration-300" href="#experience">Experience</a>
+        <a class="hover:text-[#B54548] ease-in duration-300" href="#education">Education</a>
+        <a class="hover:text-[#B54548] ease-in duration-300" href="#skills">Skills</a>
+        <a class="hover:text-[#B54548] ease-in duration-300" href="#portfolio">Portfolio</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <!-- mobile menu for navigation -->
+        <div class="block md:hidden bg-[#27272ae6]">Menu</div>
+
+        <button
+          @click="toggleDarkMode"
+          class="rounded-full shadow-md p-3.5 cursor-pointer items-end"
+          :class="{ 'bg-[#27272ae6]': isDarkMode }"
+        >
+          <img x-show="!isDarkMode" src="./public/sun.svg" class="w-[20px] h-[20px]" alt="" />
+          <img x-show="isDarkMode" src="./public/moon.svg" class="w-[20px] h-[20px]" alt="" />
+        </button>
+      </div>
+    </div>
+
+    <div class="w-[95%] md:w-[55%] m-auto">
+      <section class="mt-12">
+        <div class="flex items-center">
+          <div>
+            <div class="font-semibold text-content text-3xl">Puzant Bakjejian</div>
+            <div class="text-content w-full md:w-[90%]">
+              Passionate Full Stack Developer dedicated to crafting products with meticulous
+              attention to detail
+            </div>
+
+            <div class="text-content">Beirut, Lebanon</div>
+          </div>
+
+          <img
+            class="h-[112px] w-[112px] rounded-xl object-cover"
+            src="./public/profile-image.png"
+            alt=""
+          />
+        </div>
+
+        <div class="flex gap-2 my-2">
+          <a
+            class="border border-gray-300 p-1.5 rounded-md"
+            href="mailto:pbakjejian@hotmail.com"
+            target="_blank"
+          >
+            <img
+              :src="isDarkMode ? './public/mail-dark-logo.svg' : './public/mail-logo.svg'"
+              alt=""
+            />
+          </a>
+          <a
+            class="border border-gray-300 p-1.5 rounded-md"
+            href="tel:+96176156119"
+            target="_blank"
+          >
+            <img
+              :src="isDarkMode ? './public/mobile-dark-logo.svg' : './public/mobile-logo.svg'"
+              alt=""
+            />
+          </a>
+          <a
+            class="border border-gray-300 p-1.5 rounded-md"
+            href="https://www.linkedin.com/in/puzant-b-006426108/"
+            target="_blank"
+          >
+            <img
+              :src="isDarkMode ? './public/linkedin-dark-logo.svg' : './public/linkedin-logo.svg'"
+              alt=""
+            />
+          </a>
+          <a
+            class="border border-gray-300 p-1.5 rounded-md"
+            href="https://github.com/puzant"
+            target="_blank"
+          >
+            <img
+              :src="isDarkMode ? './public/github-dark-logo.svg' : './public/github-logo.svg'"
+              alt=""
+            />
+          </a>
+        </div>
+      </section>
+
+      <div class="my-4 h-[1px] bg-gray-200"></div>
+
+      <section id="about">
+        <div class="flex flex-col">
+          <span class="font-medium text-2xl text-content">About</span>
+          <span class="text-accent-primary">
+            With 5+ years in software development, I specialize in JavaScript (React, Vue, Angular)
+            and back-end tech (Node.js, MySQL, MongoDB).
+          </span>
+          <span class="text-accent-primary">
+            Where I've excelled in crafting medium to large-scale apps, optimizing performance, and
+            ensuring scalability for an enhanced user experience.
+          </span>
+        </div>
+      </section>
+
+      <div class="my-4 h-[1px] bg-gray-200"></div>
+
+      <main id="experience">
+        <span class="mt-4 font-medium text-content text-2xl">Work Experience</span>
+
+        <section class="mt-2">
+          <div class="flex flex-col">
+            <div class="flex justify-between">
+              <span class="font-bold text-accent-secondary">KerningCode</span>
+              <span class="text-content">07/2021 - 12/2023</span>
+            </div>
+
+            <span class="text-md text-content">Software Developer</span>
+
+            <ul class="list-disc px-4 text-accent-primary">
+              <li>
+                Led the design & development of a cutting-edge Real-Estate management platform that
+                empowers individuals & business alike Providing seamless functionality & integration
+                for different accounting & banking services
+              </li>
+              <li>
+                Led the development of several products E2E, from identifying business requirements,
+                software implementation, engineering, & testing
+              </li>
+              <li>
+                Enhanced the SEO through the implementation of industry best practices & code
+                optimization, resulting in improved search Engine rankings & visibility on search
+                pages
+              </li>
+              <li>
+                Continuous Integration/Deployment Pipeline Integration, pull requests, code reviews,
+                unit/integration/e2e testing
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="mt-2">
+          <div class="flex flex-col">
+            <div class="flex justify-between">
+              <span class="font-bold text-accent-secondary">DesignHubz</span>
+              <span class="text-content">11/2020 - 08/2021</span>
+            </div>
+
+            <span class="text-md text-content">Front-End Developer</span>
+
+            <ul class="list-disc px-4 text-accent-primary">
+              <li>
+                Developed & Implemented enterprise applications for managing 3D models using, React,
+                NextJs, TypeScript, StoryBook, NX monorepo
+              </li>
+              <li>
+                Designed and developed internal systems that facilitate communication between
+                digital artists & clients
+              </li>
+              <li>
+                Automated and optimized business logic for the core platform, including Unit tests,
+                integration testing. Component optimization
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="mt-2">
+          <div class="flex flex-col">
+            <div class="flex justify-between">
+              <span class="font-bold text-accent-secondary">VineLab</span>
+              <span class="text-content">10/2018 - 05/2020</span>
+            </div>
+
+            <span class="text-md text-content">Front-End Developer</span>
+
+            <ul class="list-disc px-4 text-accent-primary">
+              <li>
+                Spearheaded the development of company’s product (influencer marketing platform), as
+                a valuable company product usingVuejs, Vuex, Typescript
+              </li>
+              <li>
+                Translated business requirement to features that are part of the core functionality
+                of the platform
+              </li>
+              <li>
+                Integrated multiple third-party systems within the platform to enhance data
+                reliability & quality
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <div class="my-4 h-[1px] bg-gray-200"></div>
+
+      <section id="education">
+        <span class="font-medium text-content text-2xl">Education</span>
+
+        <div class="flex justify-between">
+          <span class="font-bold text-accent-secondary">Lebanese International University</span>
+          <span class="text-content">2019 - 2022</span>
+        </div>
+
+        <div class="text-accent-primary">Bachelor's Degree in Computer Science</div>
+      </section>
+
+      <section class="mt-2">
+        <div class="flex justify-between">
+          <span class="font-bold text-accent-secondary">Vschool</span>
+          <span class="text-content">02/2017 - 042017</span>
+        </div>
+
+        <div class="text-accent-primary">
+          Four months intensive traning in Full Stack development (MERN Stack)
+        </div>
+      </section>
+
+      <div class="my-4 h-[1px] bg-gray-200"></div>
+
+      <section id="skills">
+        <span class="font-medium text-content text-2xl">Skills</span>
+
+        <div
+          class="mt-2 flex flex-wrap gap-1"
+          x-data="{skills: ['React', 'Vue', 'CSS', 'TailwindCSS', 'Redux', 'JavaScript/TypeScript', 'NodeJs', 'Express', 'MySQL']}"
+        >
+          <template x-for="skill in skills">
+            <span
+              class="text-sm rounded-md p-0.5 px-2.5"
+              :class="isDarkMode ? 'bg-[#27272ae6] text-accent-secondary' : 'text-black bg-gray-200'"
+              x-text="skill"
+            ></span>
+          </template>
+        </div>
+      </section>
+
+      <div class="my-4 h-[1px] bg-gray-200"></div>
+
+      <section id="portfolio">
+        <span class="font-medium text-content text-2xl">Portfolio</span>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-2" x-data="projects">
+          <template x-for="project in projects">
+            <div class="cursor-pointer rounded-md shadow-md">
+              <div class="relative group">
+                <a :href="project.link" target="_blank">
+                  <img class="w-full object-cover" x-bind:src="project.src" alt="project image" />
+
+                  <div
+                    class="flex justify-center items-center transition ease-in-out delay-100 absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity"
+                  >
+                    <div class="hidden group-hover:block bg-white rounded-md shadod-md px-2 py-1">
+                      <img src="./public/link-icon.svg" alt="" />
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="flex flex-col p-4">
+                <span class="font-bold text-accent-secondary" x-text="project.name"></span>
+                <span class="text-accent-primary" x-text="project.description"></span>
+
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <template x-for="tech in project.tech">
+                    <span
+                      class="text-sm rounded-md p-0.5 px-2.5"
+                      :class="isDarkMode ? 'bg-[#27272ae6] text-accent-secondary' : 'text-black bg-gray-200'"
+                      x-text="tech"
+                    ></span>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </section>
+    </div>
+  </body>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <script>
+    function initTheme() {
+      const rootElement = document.documentElement;
+      if (localStorage.getItem('theme') === 'light') {
+        this.isDarkMode = false;
+      } else {
+        const currentTheme = rootElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        rootElement.setAttribute('data-theme', newTheme);
+        this.isDarkMode = true;
+      }
+    }
+
+    function toggleDarkMode() {
+      const rootElement = document.documentElement;
+      const currentTheme = rootElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      rootElement.setAttribute('data-theme', newTheme);
+      this.isDarkMode = !this.isDarkMode;
+      localStorage.setItem('theme', newTheme);
+    }
+
+    const projects = [
+      {
+        name: 'Movie Tracker',
+        link: 'https://react-app-movies-tracker.netlify.app/',
+        description:
+          'Simple application that allows users to track and manage their favorite movies, explore movie details.',
+        src: './public/project-1.png',
+        tech: ['React', 'React Query', 'React Router', 'TypeScript', 'TailwindCSS'],
+      },
+      {
+        name: 'LOCUS',
+        link: 'https://www.locus.eu/',
+        description: 'Real Estate management platform',
+        src: './public/project-4.png',
+        tech: ['React', 'React Query', 'React Router', 'Formik', 'Axios', 'TailwindCSS'],
+      },
+      {
+        name: 'Password Generator',
+        link: 'https://complex-password-generator-app.netlify.app/',
+        description:
+          'generate passwords with various customization options, including capital letters, numbers, symbols,& pronounceable.',
+        src: './public/project-2.jpeg',
+        tech: ['React', 'TailwindCSS'],
+      },
+      {
+        name: 'Ethtronomy',
+        link: 'https://ethtronomy.com/',
+        description: '',
+        src: './public/project-3.jpeg',
+        tech: ['React', 'React Router', 'CSS'],
+      },
+    ];
+  </script>
+</html>

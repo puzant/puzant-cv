@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bkg: 255 255 255;
+    --color-content: 0 0 0;
+    --color-accent-primary: 24 25 27;
+    --color-accent-secondary: 17 17 19;
+  }
+
+  :root[data-theme='dark'] {
+    --color-bkg: 25 25 25;
+    --color-content: 236 238 236;
+    --color-accent-primary: 176 180 186;
+    --color-accent-secondary: 181 69 72;
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Calibri', sans-serif;
+}
