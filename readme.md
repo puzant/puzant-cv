@@ -6,7 +6,14 @@
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white)
 
+## Preview
+### Desktop
 ![app-screenshot](./public/project-screenshot-1.png)
+
+### Mobile
+![app-screenshot](./public/app-screenshot-2.png)
+![app-screenshot-2](./public/app-screenshot-3.png)  
+
 
 Welcome to my CV repository! This project showcases my personal CV in the form of a web page, built with Tailwind CSS, Alpine.js, HTML, and CSS variables. The page includes a dark mode feature for a personalized user experience.
 
