@@ -20,3 +20,17 @@ Welcome to my CV repository! This project showcases my personal CV in the form o
 - HTML: Standard markup language for creating the structure of the web page.
 - CSS Variables: Used for managing and maintaining consistent color themes.
 
+## Getting Started
+1. Clone the repository:
+```
+git clone https://github.com/your-username/your-cv-repo.git
+```
+2. Install the packages
+```
+npm install
+```
+3. Run the App
+```
+npm run dev
+```
+4. Open the browser & navigate to `localhost:5173`
