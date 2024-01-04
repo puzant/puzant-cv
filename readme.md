@@ -3,6 +3,7 @@
 ![Alpine](https://img.shields.io/badge/Alpine%20JS-8BC0D0?style=flat&logo=alpinedotjs&logoColor=black)
 ![Javascript](https://img.shields.io/badge/JavaScript-323330?style=flat&logo=javascript&logoColor=F7DF1E)
 ![html](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![css](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white)
 
@@ -18,8 +19,8 @@
 Welcome to my CV repository! This project showcases my personal CV in the form of a web page, built with Tailwind CSS, Alpine.js, HTML, and CSS variables. The page includes a dark mode feature for a personalized user experience.
 
 ## Features 🚀
-- Responsive Design: The CV is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.
-- Dark Mode: Enjoy reading my CV in both light and dark modes. Toggle between the modes for a comfortable viewing experience.
+- 📱 Responsive Design: The CV is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.
+- 🌙 Dark Mode: Enjoy reading my CV in both light and dark modes. Toggle between the modes for a comfortable viewing experience.
 
 ## Technologies Used 🤖
 - Tailwind CSS: A utility-first CSS framework used for styling.
