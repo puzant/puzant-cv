@@ -1,3 +1,3 @@
 # Puzant CV
 
-![app-screenshot](./public/app-screenshot-1.png)
+![app-screenshot](./public/project-screenshot-1.png)
