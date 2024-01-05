@@ -31,8 +31,9 @@
         <div
           class="flex gap-2.5 items-center md:hidden px-3.5 py-2 rounded-3xl text-content shadow-md border"
           :class="{ 'bg-[#27272ae6] text-white border-zinc-800': isDarkMode }"
+          @click="isOpen = true"
         >
-          <span @click="isOpen = true">Menu</span>
+          <span>Menu</span>
           <img class="w-[20px] h-[20px]" src="./public/arrow-logo.svg" alt="" />
         </div>
 
@@ -327,5 +328,5 @@
   </body>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script type="module" src="/main.js"></script>
+  <script src="./main.js"></script>
 </html>
