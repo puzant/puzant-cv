@@ -8,7 +8,11 @@
     <title>Puzant CV</title>
   </head>
 
-  <body class="py-4 md:py-8 px-0 md:px-10 bg-bkg" x-data="{ isDarkMode: false }" x-init="initTheme">
+  <body
+    x-data="{ isDarkMode: false, isOpen: false }"
+    x-init="initTheme"
+    class="py-4 md:py-8 px-0 md:px-10 bg-bkg"
+  >
     <div class="flex justify-end md:justify-between w-[95%] md:w-[55%] m-auto">
       <!-- desktop view navigation -->
       <div
@@ -24,7 +28,13 @@
 
       <div class="flex items-center gap-4">
         <!-- mobile menu for navigation -->
-        <div class="block md:hidden bg-[#27272ae6]">Menu</div>
+        <div
+          class="flex gap-2.5 items-center md:hidden px-3.5 py-2 rounded-3xl text-content shadow-md border"
+          :class="{ 'bg-[#27272ae6] text-white border-zinc-800': isDarkMode }"
+        >
+          <span @click="isOpen = true">Menu</span>
+          <img class="w-[20px] h-[20px]" src="./public/arrow-logo.svg" alt="" />
+        </div>
 
         <button
           @click="toggleDarkMode"
@@ -35,6 +45,29 @@
           <img x-show="isDarkMode" src="./public/moon.svg" class="w-[20px] h-[20px]" alt="" />
         </button>
       </div>
+
+      <div x-transition x-show="isOpen" class="overlay"></div>
+
+      <!-- custom dialog with links -->
+      <div
+        class="z-20 fixed h-fit bg-bkg w-[95%] border border-accent-secondary/25 rounded-3xl px-7 py-5"
+        x-show="isOpen"
+        x-transition
+      >
+        <div class="flex justify-between">
+          <div class="text-accent-primary">Navigation</div>
+          <img @click="isOpen = false" src="./public/close-logo.svg" alt="" />
+        </div>
+
+        <div class="flex flex-col text-accent-primary mt-5">
+          <template x-for="(link, index) in navLinks">
+            <div>
+              <a @click="isOpen = false" :href="link.ref" x-text="link.name"></a>
+              <div x-show="index < navLinks.length - 1" class="my-2.5 h-[1px] bg-zinc-800"></div>
+            </div>
+          </template>
+        </div>
+      </div>
     </div>
 
     <div class="w-[95%] md:w-[55%] m-auto">
@@ -42,12 +75,12 @@
         <div class="flex items-center">
           <div>
             <div class="font-semibold text-content text-3xl">Puzant Bakjejian</div>
-            <div class="text-content w-full md:w-[90%]">
+            <div class="text-accent-primary w-full md:w-[90%]">
               Passionate Full Stack Developer dedicated to crafting products with meticulous
               attention to detail
             </div>
 
-            <div class="text-content">Beirut, Lebanon</div>
+            <div class="text-accent-primary">Beirut, Lebanon</div>
           </div>
 
           <img
@@ -294,60 +327,5 @@
   </body>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-  <script>
-    function initTheme() {
-      const rootElement = document.documentElement;
-      if (localStorage.getItem('theme') === 'light') {
-        this.isDarkMode = false;
-      } else {
-        const currentTheme = rootElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        rootElement.setAttribute('data-theme', newTheme);
-        this.isDarkMode = true;
-      }
-    }
-
-    function toggleDarkMode() {
-      const rootElement = document.documentElement;
-      const currentTheme = rootElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      rootElement.setAttribute('data-theme', newTheme);
-      this.isDarkMode = !this.isDarkMode;
-      localStorage.setItem('theme', newTheme);
-    }
-
-    const projects = [
-      {
-        name: 'Movie Tracker',
-        link: 'https://react-app-movies-tracker.netlify.app/',
-        description:
-          'Simple application that allows users to track and manage their favorite movies, explore movie details.',
-        src: './public/project-1.png',
-        tech: ['React', 'React Query', 'React Router', 'TypeScript', 'TailwindCSS'],
-      },
-      {
-        name: 'LOCUS',
-        link: 'https://www.locus.eu/',
-        description: 'Real Estate management platform',
-        src: './public/project-4.png',
-        tech: ['React', 'React Query', 'React Router', 'Formik', 'Axios', 'TailwindCSS'],
-      },
-      {
-        name: 'Password Generator',
-        link: 'https://complex-password-generator-app.netlify.app/',
-        description:
-          'generate passwords with various customization options, including capital letters, numbers, symbols,& pronounceable.',
-        src: './public/project-2.jpeg',
-        tech: ['React', 'TailwindCSS'],
-      },
-      {
-        name: 'Ethtronomy',
-        link: 'https://ethtronomy.com/',
-        description: '',
-        src: './public/project-3.jpeg',
-        tech: ['React', 'React Router', 'CSS'],
-      },
-    ];
-  </script>
+  <script src="./main.js"></script>
 </html>
