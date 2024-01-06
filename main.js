@@ -19,14 +19,6 @@ function toggleDarkMode() {
   localStorage.setItem('theme', newTheme);
 }
 
-const navLinks = [
-  { name: 'About', ref: '#about' },
-  { name: 'Experience', ref: '#experience' },
-  { name: 'Education', ref: '#education' },
-  { name: 'Skills', ref: '#skills' },
-  { name: 'Portfolio', ref: '#portfolio' },
-];
-
 const projects = [
   {
     name: 'Movie Tracker',
@@ -59,3 +51,17 @@ const projects = [
     tech: ['React', 'React Router', 'CSS'],
   },
 ];
+
+document.addEventListener('alpine:init', () => {
+  Alpine.data('myApp', () => ({
+    isDarkMode: false,
+    isOpen: false,
+    navLinks: [
+      { name: 'About', ref: '#about' },
+      { name: 'Experience', ref: '#experience' },
+      { name: 'Education', ref: '#education' },
+      { name: 'Skills', ref: '#skills' },
+      { name: 'Portfolio', ref: '#portfolio' },
+    ],
+  }));
+});
