@@ -33,14 +33,14 @@ const projects = [
     link: 'https://react-app-movies-tracker.netlify.app/',
     description:
       'Simple application that allows users to track and manage their favorite movies, explore movie details.',
-    src: './public/project-1.png',
+    src: './project-1.png',
     tech: ['React', 'React Query', 'React Router', 'TypeScript', 'TailwindCSS'],
   },
   {
     name: 'LOCUS',
     link: 'https://www.locus.eu/',
     description: 'Real Estate management platform',
-    src: './public/project-4.png',
+    src: './project-4.png',
     tech: ['React', 'React Query', 'React Router', 'Formik', 'Axios', 'TailwindCSS'],
   },
   {
@@ -48,14 +48,14 @@ const projects = [
     link: 'https://complex-password-generator-app.netlify.app/',
     description:
       'generate passwords with various customization options, including capital letters, numbers, symbols,& pronounceable.',
-    src: './public/project-2.jpeg',
+    src: './project-2.jpeg',
     tech: ['React', 'TailwindCSS'],
   },
   {
     name: 'Ethtronomy',
     link: 'https://ethtronomy.com/',
     description: '',
-    src: './public/project-3.jpeg',
+    src: './project-3.jpeg',
     tech: ['React', 'React Router', 'CSS'],
   },
 ];
