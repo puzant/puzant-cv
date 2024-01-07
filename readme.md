@@ -1,6 +1,6 @@
 # Puzant CV 💼
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/69b08752-c859-4ab6-a550-e45447ffb753/deploy-status)](https://app.netlify.com/sites/react-app-movies-tracker/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9c56431e-e549-4330-9574-e0e4df76f57d/deploy-status)](https://app.netlify.com/sites/puzant-cv/deploys)
 
 ![Alpine](https://img.shields.io/badge/Alpine%20JS-8BC0D0?style=flat&logo=alpinedotjs&logoColor=black)
 ![Javascript](https://img.shields.io/badge/JavaScript-323330?style=flat&logo=javascript&logoColor=F7DF1E)
