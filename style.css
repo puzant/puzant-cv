@@ -8,6 +8,7 @@
     --color-content: 0 0 0;
     --color-accent-primary: 107 114 128;
     --color-accent-secondary: 17 17 19;
+    --color-border: 229 231 235;
   }
 
   :root[data-theme='dark'] {
@@ -15,6 +16,7 @@
     --color-content: 236 238 236;
     --color-accent-primary: 176 180 186;
     --color-accent-secondary: 181 69 72;
+    --color-border: 49 49 49;
   }
 }
 
