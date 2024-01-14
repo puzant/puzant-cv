@@ -12,6 +12,10 @@
 
 **Live demo**: [Puzant CV](http://puzant-cv.netlify.app/)
 
+- Welcome to my CV repository! This project showcases my personal CV in the form of a web page, built with Tailwind CSS, Alpine.js, HTML, and CSS variables & connected to StoryBlok Headless CMS. 
+- The page includes a dark mode feature for a personalized user experience.
+
+
 ## Preview
 ### Desktop
 ![app-screenshot](./public/project-screenshot-1.png)
@@ -19,9 +23,6 @@
 ### Mobile
 ![app-screenshot](./public/app-screenshot-2.png)
 ![app-screenshot-2](./public/app-screenshot-3.png)  
-
-
-Welcome to my CV repository! This project showcases my personal CV in the form of a web page, built with Tailwind CSS, Alpine.js, HTML, and CSS variables. The page includes a dark mode feature for a personalized user experience.
 
 ## Features 🚀
 - 📱 Responsive Design: The CV is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.
@@ -32,6 +33,7 @@ Welcome to my CV repository! This project showcases my personal CV in the form o
 - Alpine.js: A lightweight JavaScript framework for adding interactivity to web pages.
 - HTML: Standard markup language for creating the structure of the web page.
 - CSS Variables: Used for managing and maintaining consistent color themes.
+- Stoyblok CMS: Used for storing, editing, & fetching the content & assets.
 
 ## Getting Started
 1. Clone the repository:
