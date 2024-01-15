@@ -152,7 +152,7 @@
               <span class="text-md text-content" x-text="exp.content.title"></span>
 
               <div
-                class="text-accent-primary"
+                class="px-4 text-accent-primary"
                 x-html="resolver.render(exp.content.achievements)"
               ></div>
             </div>
@@ -223,12 +223,12 @@
                 <span class="font-bold text-accent-secondary" x-text="project.content.title"></span>
                 <span class="text-accent-primary" x-text="project.content.description"></span>
 
-                <div class="flex flex-wrap gap-1.5 mt-2">
-                  <template x-for="tech in project.tech">
+                <div class="flex gap-2">
+                  <template x-for="tech in project.content.technologies">
                     <span
                       class="text-sm rounded-md p-0.5 px-2.5"
                       :class="isDarkMode ? 'bg-[#27272ae6] text-accent-secondary' : 'text-black bg-gray-200'"
-                      x-text="tech"
+                      x-text="tech.name"
                     ></span>
                   </template>
                 </div>
