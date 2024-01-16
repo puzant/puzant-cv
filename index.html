@@ -5,7 +5,6 @@
     <link rel="icon" type="image/svg+xml" href="./avatar.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
     <title>Puzant CV</title>
   </head>
 
@@ -58,7 +57,7 @@
         </div>
 
         <div class="flex flex-col text-accent-primary mt-5">
-          <template x-for="(link, index) in navLinks">
+          <template x-for="(link, index) in navLinks" :key="link.ref">
             <div>
               <a @click="isOpen = false" :href="link.ref" x-text="link.name"></a>
               <div x-show="index < navLinks.length - 1" class="my-2.5 h-[1px] bg-zinc-800"></div>
@@ -141,7 +140,7 @@
       <main id="experience">
         <span class="mt-4 font-medium text-content text-2xl">Work Experience</span>
 
-        <template x-for="exp in content.experiences">
+        <template x-for="exp in content.experiences" :key="exp.id">
           <section class="mt-2">
             <div class="flex flex-col">
               <div class="flex justify-between">
@@ -165,7 +164,7 @@
       <main id="education">
         <span class="font-medium text-content text-2xl">Education</span>
 
-        <template x-for="edu in content.education">
+        <template x-for="edu in content.education" :key="edu.id">
           <section class="mt-2">
             <div class="flex justify-between">
               <span class="font-bold text-accent-secondary" x-text="edu.content.institute"></span>
@@ -183,7 +182,7 @@
         <span class="font-medium text-content text-2xl">Skills</span>
 
         <div class="mt-2 flex flex-wrap gap-1">
-          <template x-for="skill in skills">
+          <template x-for="skill in skills" :key="skill">
             <span
               class="text-sm rounded-md p-0.5 px-2.5"
               :class="isDarkMode ? 'bg-[#27272ae6] text-accent-secondary' : 'text-black bg-gray-200'"
@@ -199,7 +198,7 @@
         <span class="font-medium text-content text-2xl">Portfolio</span>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-2">
-          <template x-for="project in content.projects">
+          <template x-for="project in content.projects" :key="project.id">
             <div class="cursor-pointer rounded-md shadow-md">
               <div class="relative group">
                 <a :href="project.content.link.url" target="_blank">
@@ -223,8 +222,8 @@
                 <span class="font-bold text-accent-secondary" x-text="project.content.title"></span>
                 <span class="text-accent-primary" x-text="project.content.description"></span>
 
-                <div class="flex gap-2">
-                  <template x-for="tech in project.content.technologies">
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <template x-for="tech in project.content.technologies" :key="tech._uid">
                     <span
                       class="text-sm rounded-md p-0.5 px-2.5"
                       :class="isDarkMode ? 'bg-[#27272ae6] text-accent-secondary' : 'text-black bg-gray-200'"
