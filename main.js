@@ -2,7 +2,7 @@ import StoryblokClient from 'storyblok-js-client';
 import RichTextResolver from 'storyblok-js-client/richTextResolver';
 
 const Storyblok = new StoryblokClient({
-  accessToken: 'vOKS6Nimy3ejWiiSHvog4gtt',
+  accessToken: import.meta.env.VITE_STORY_BLOK_ACCESS_TOKEN,
 });
 
 export default function app() {
