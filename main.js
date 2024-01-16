@@ -23,7 +23,6 @@ export default function app() {
           },
           { projects: [], experiences: [], education: [] },
         );
-
         this.content = groupedStories;
       });
 
@@ -64,6 +63,13 @@ export default function app() {
       'NodeJs',
       'Express',
       'MySQL',
+    ],
+    navLinks: [
+      { name: 'About', ref: '#about' },
+      { name: 'Experience', ref: '#experience' },
+      { name: 'Education', ref: '#education' },
+      { name: 'Skills', ref: '#skills' },
+      { name: 'Portfolio', ref: '#portfolio' },
     ],
   };
 }
