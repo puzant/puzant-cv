@@ -8,22 +8,20 @@ const Storyblok = new StoryblokClient({
 export default function app() {
   return {
     initTheme() {
-      /**
-       * projects parent_id: 426739925
-       * experiences parent_id: 426739827
-       * education parent_id: 426817313
-       */
+      let groupedStoriesMap = {};
+
       Storyblok.get('cdn/stories', { cv: 'CURRENT_TIMESTAMP' }).then(({ data }) => {
-        const groupedStories = data.stories.reduce(
-          (acc, story) => {
-            if (story.parent_id === 426739925) acc['projects'].push(story);
-            else if (story.parent_id === 426739827) acc['experiences'].push(story);
-            else if (story.parent_id === 426817313) acc['education'].push(story);
-            return acc;
-          },
-          { projects: [], experiences: [], education: [] },
-        );
-        this.content = groupedStories;
+        data.stories.forEach((element) => {
+          const componentType = element.content.component;
+          const excludedListContent = ['about', 'summary'];
+
+          if (!groupedStoriesMap[componentType]) groupedStoriesMap[componentType] = [];
+
+          if (excludedListContent.includes(componentType))
+            groupedStoriesMap[componentType] = element;
+          else groupedStoriesMap[componentType].push(element);
+        });
+
       });
 
       const rootElement = document.documentElement;

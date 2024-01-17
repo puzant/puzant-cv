@@ -9,7 +9,7 @@
   </head>
 
   <body x-cloak x-init="initTheme" x-data="app" class="py-4 md:py-8 px-0 md:px-10 bg-bkg">
-    <div class="flex justify-end md:justify-between w-[95%] md:w-[55%] m-auto">
+     <div class="flex justify-end md:justify-between w-[95%] md:w-[55%] m-auto">
       <!-- desktop view navigation -->
       <div
         class="hidden md:flex items-center justify-between py-3 px-8 shadow-md border text-sm rounded-3xl w-[75%] m-auto"
@@ -72,9 +72,7 @@
         <div class="flex items-center">
           <div>
             <div class="font-semibold text-content text-3xl">Puzant Bakjejian</div>
-            <div class="text-accent-primary w-[90%]">
-              Passionate Full Stack Developer dedicated to crafting products with meticulous
-              attention to detail
+            <div class="text-accent-primary w-[90%]" x-text="content.summary.content.summary">
             </div>
 
             <div class="text-accent-primary">Beirut, Lebanon</div>
@@ -124,13 +122,7 @@
       <section id="about">
         <div class="flex flex-col">
           <span class="font-medium text-2xl text-content">About</span>
-          <span class="text-accent-primary">
-            With 5+ years in software development, I specialize in JavaScript (React, Vue, Angular)
-            and back-end tech (Node.js, MySQL, MongoDB)
-          </span>
-          <span class="text-accent-primary">
-            Where I've excelled in crafting medium to large-scale apps, optimizing performance, and
-            ensuring scalability for an enhanced user experience.
+          <span class="text-accent-primary whitespace-pre-line" x-text="content.about.content.about">
           </span>
         </div>
       </section>
@@ -140,7 +132,7 @@
       <main id="experience">
         <span class="mt-4 font-medium text-content text-2xl">Work Experience</span>
 
-        <template x-for="exp in content.experiences" :key="exp.id">
+        <template x-for="exp in content.work_experience" :key="exp.id">
           <section class="mt-2">
             <div class="flex flex-col">
               <div class="flex justify-between">
@@ -198,7 +190,7 @@
         <span class="font-medium text-content text-2xl">Portfolio</span>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-2">
-          <template x-for="project in content.projects" :key="project.id">
+          <template x-for="project in content.project" :key="project.id">
             <div class="cursor-pointer rounded-md shadow-md">
               <div class="relative group">
                 <a :href="project.content.link.url" target="_blank">
