@@ -22,6 +22,7 @@ export default function app() {
           else groupedStoriesMap[componentType].push(element);
         });
 
+        this.content = groupedStoriesMap;
       });
 
       const rootElement = document.documentElement;
