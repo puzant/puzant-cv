@@ -1,4 +1,4 @@
-# Puzant CV 💼
+# 💼Puzant CV
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9c56431e-e549-4330-9574-e0e4df76f57d/deploy-status)](https://app.netlify.com/sites/puzant-cv/deploys)
 
@@ -24,11 +24,11 @@
 ![app-screenshot](./public/app-screenshot-2.png)
 ![app-screenshot-2](./public/app-screenshot-3.png)  
 
-## Features 🚀
+## 🚀Features 
 - 📱 Responsive Design: The CV is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.
 - 🌙 Dark Mode: Enjoy reading my CV in both light and dark modes. Toggle between the modes for a comfortable viewing experience.
 
-## Technologies Used 🤖
+## 🤖Technologies Used 
 - Tailwind CSS: A utility-first CSS framework used for styling.
 - Alpine.js: A lightweight JavaScript framework for adding interactivity to web pages.
 - HTML: Standard markup language for creating the structure of the web page.
