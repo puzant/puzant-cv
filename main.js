@@ -5,6 +5,12 @@ const Storyblok = new StoryblokClient({
   accessToken: import.meta.env.VITE_STORY_BLOK_ACCESS_TOKEN,
 });
 
+document.addEventListener('keydown', function(event) {
+  if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+    alert('Command + K pressed');
+  }
+});
+
 export default function app() {
   return {
     initTheme() {
