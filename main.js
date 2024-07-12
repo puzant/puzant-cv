@@ -8,6 +8,7 @@ const Storyblok = new StoryblokClient({
 export default function app() {
   return {
     initTheme() {
+      this.isLoading = true
       let groupedStoriesMap = {};
 
       Storyblok.get('cdn/stories', { cv: 'CURRENT_TIMESTAMP' }).then(({ data }) => {
@@ -23,7 +24,11 @@ export default function app() {
         });
 
         this.content = groupedStoriesMap;
-      });
+        this.isLoading = false
+      }).catch((err) => {
+        console.log("there was an error")
+        this.isLoading = false
+      })
 
       const rootElement = document.documentElement;
 
@@ -48,6 +53,7 @@ export default function app() {
       localStorage.setItem('theme', newTheme);
     },
 
+    isLoading: false,
     resolver: new RichTextResolver(),
     content: [],
     isDarkMode: false,

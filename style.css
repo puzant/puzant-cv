@@ -53,3 +53,18 @@ body {
 ul {
   list-style-type: disc;
 }
+
+
+.skeleton {
+  background-color: #e0e0e0;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: .4;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
