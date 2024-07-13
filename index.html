@@ -14,7 +14,7 @@
     <title>Puzant CV</title>
   </head>
 
-  <body x-cloak x-init="initTheme" x-data="app" class="py-4 md:py-8 px-0 md:px-10 bg-bkg">
+  <body x-cloak x-init="initTheme" x-data="app" @keydown="addKeyboardListner" class="py-4 md:py-8 px-0 md:px-10 bg-bkg">
     <div class="flex justify-end md:justify-between w-[95%] md:w-[55%] m-auto">
       <!-- desktop view navigation -->
       <div
@@ -28,12 +28,12 @@
         <a class="hover:text-[#B54548] ease-in duration-300" href="#portfolio">Portfolio</a>
       </div>
 
+      <!-- mobile menu for navigation -->
       <div class="flex items-center gap-4">
-        <!-- mobile menu for navigation -->
         <div
           class="flex gap-2.5 items-center md:hidden px-3.5 py-2 rounded-3xl text-content shadow-md border"
           :class="{ 'bg-[#27272ae6] text-white border-zinc-800': isDarkMode }"
-          @click="isOpen = true"
+          @click="toggleMobileNavigationMenu"
         >
           <span>Menu</span>
           <img class="w-[20px] h-[20px]" src="/arrow-logo.svg" alt="" />
@@ -49,7 +49,7 @@
         </button>
       </div>
 
-      <div x-show="isOpen" class="overlay"></div>
+      <div x-show="overlayOn" class="overlay"></div>
 
       <!-- custom dialog with links -->
       <div
@@ -59,17 +59,33 @@
       >
         <div class="flex justify-between">
           <div class="text-accent-primary">Navigation</div>
-          <img @click="isOpen = false" src="/close-logo.svg" alt="" />
+          <img @click="toggleMobileNavigationMenu" src="/close-logo.svg" alt="" />
         </div>
 
         <div class="flex flex-col text-accent-primary mt-5">
           <template x-for="(link, index) in navLinks" :key="link.ref">
             <div>
-              <a @click="isOpen = false" :href="link.ref" x-text="link.name"></a>
+              <a @click="toggleMobileNavigationMenu" :href="link.ref" x-text="link.name"></a>
               <div x-show="index < navLinks.length - 1" class="my-2.5 h-[1px] bg-zinc-800"></div>
             </div>
           </template>
         </div>
+      </div>
+    </div>
+
+    <!-- command dialog -->
+    <div x-show="isCommandDialogOpen" x-transition class="fixed inset-0 flex items-center justify-center z-20">
+      <div class="h-fit bg-bkg w-[40%] border border-accent-secondary/25 rounded-xl">
+       <div class="flex items-center border-b-2">
+        <img class="h-8" src="/search-icon.svg" alt="">
+        <input type="text" placeholder="Type a command or search" class="p-2 w-full bg-bkg text-white focus:outline-none text-xl">
+        <img class="h-5" @click="toggleCommandDialog" src="/close-logo.svg" alt="">
+       </div>
+
+       <div class="">
+        <h1 class="text-white text-xl">Actions</h1>
+        <div class="text-white my-2">Print</div>
+       </div>
       </div>
     </div>
 
@@ -301,7 +317,7 @@
 
       <div class="fixed bottom-0 left-0 w-full bg-bkg/75 text-accent-primary p-2 text-center">
         Press 
-        <kbd class="font-medium text-accent-secondary bg-gray-200 text-muted-foreground px-1 py-1 mr-1 text-[10px] rounded border border-gray-300">
+        <kbd class="text-accent-secondary bg-gray-200 px-1 py-1 mr-1 text-[14px] rounded border border-gray-300">
           ⌘ K
         </kbd>
          to open the command menu
