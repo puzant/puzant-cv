@@ -5,17 +5,26 @@ const Storyblok = new StoryblokClient({
   accessToken: import.meta.env.VITE_STORY_BLOK_ACCESS_TOKEN,
 });
 
-document.addEventListener('keydown', function(event) {
-  if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
-    alert('Command + K pressed');
-  }
-});
-
 export default function app() {
   return {
+    overlayOn: false,
+    isLoading: false,
+    isCommandDialogOpen: false,
+    resolver: new RichTextResolver(),
+    content: [],
+    isDarkMode: false,
+    isOpen: false,
+
     initTheme() {
       this.isLoading = true
       let groupedStoriesMap = {};
+
+      document.addEventListener('keydown', function(event) {
+        if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+          event.preventDefault()
+          this.isCommandDialogOpen = true
+        }
+      });
 
       Storyblok.get('cdn/stories', { cv: 'CURRENT_TIMESTAMP' }).then(({ data }) => {
         data.stories.forEach((element) => {
@@ -59,11 +68,24 @@ export default function app() {
       localStorage.setItem('theme', newTheme);
     },
 
-    isLoading: false,
-    resolver: new RichTextResolver(),
-    content: [],
-    isDarkMode: false,
-    isOpen: false,
+    toggleMobileNavigationMenu() {
+      this.isOpen = !this.isOpen
+      this.overlayOn = !this.overlayOn
+    },
+
+    toggleCommandDialog() {
+      this.isCommandDialogOpen = !this.isCommandDialogOpen
+      this.overlayOn = !this.overlayOn
+    },
+
+    addKeyboardListner(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault()
+        this.isCommandDialogOpen = true
+        this.overlayOn = true
+      }
+    },
+  
     skills: [
       'React',
       'Vue',
