@@ -14,6 +14,7 @@ export default function app() {
     content: [],
     isDarkMode: false,
     isOpen: false,
+    body: document.body,
 
     initTheme() {
       this.isLoading = true
@@ -71,21 +72,30 @@ export default function app() {
     toggleMobileNavigationMenu() {
       this.isOpen = !this.isOpen
       this.overlayOn = !this.overlayOn
+      if (this.isOpen) this.body.classList.add('no-scroll');
+      else this.body.classList.remove('no-scroll')
     },
 
     toggleCommandDialog() {
       this.isCommandDialogOpen = !this.isCommandDialogOpen
       this.overlayOn = !this.overlayOn
+      if (this.isCommandDialogOpen) this.body.classList.add('no-scroll');
+      else this.body.classList.remove('no-scroll')
     },
 
     addKeyboardListner(e) {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        this.body.classList.add('no-scroll');
         e.preventDefault()
         this.isCommandDialogOpen = true
         this.overlayOn = true
       }
     },
   
+    printCV() {
+      window.print()
+    },
+
     skills: [
       'React',
       'Vue',

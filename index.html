@@ -79,19 +79,19 @@
        <div class="flex items-center border-b-2 border-border px-2">
         <img class="h-6" :src="isDarkMode ? '/search-icon-white.svg' : '/search-icon-black.svg'" alt="" />
         <input type="text" placeholder="Type a command or search" class="p-4 w-full bg-bkg text-content focus:outline-none text-xl">
-        <img class="h-5" @click="toggleCommandDialog" src="/close-logo.svg" alt="">
+        <img class="h-5 cursor-pointer" @click="toggleCommandDialog" src="/close-logo.svg" alt="">
        </div>
 
        <div class="p-1">
           <h1 class="text-content text-xl p-2.5">Actions</h1>
-          <div class="p-2.5 cursor-pointer rounded-md text-accent-primary">Print</div>
+          <div @click="printCV" class="p-2.5 cursor-pointer rounded-md text-accent-primary hover:bg-border">Print</div>
         </div>
 
         <div class="p-1">
           <h1 class="text-content text-xl p-2.5">Links</h1>
           <div class="flex flex-col">
             <template x-for="link in links">
-              <a :href="link.url" target="_blank" class="p-2.5 cursor-pointer rounded-md text-accent-primary" x-text="link.name"></a>
+              <a :href="link.url" target="_blank" class="p-2.5 cursor-pointer rounded-md text-accent-primary hover:bg-border" x-text="link.name"></a>
             </template>
           </div>
         </div>
