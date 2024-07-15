@@ -104,5 +104,10 @@ export default function app() {
       { name: 'Skills', ref: '#skills' },
       { name: 'Portfolio', ref: '#portfolio' },
     ],
+    links: [
+      {name: 'Linkedin', url: 'https://www.linkedin.com/in/puzant-b-006426108/'},
+      {name: 'Github', url: 'https://github.com/puzant'},
+      {name: 'X', url: 'https://x.com/puzantBakjejian'},
+    ]
   };
 }
