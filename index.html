@@ -36,7 +36,7 @@
           @click="toggleMobileNavigationMenu"
         >
           <span>Menu</span>
-          <img class="w-[20px] h-[20px]" src="/arrow-logo.svg" alt="" />
+          <img class="w-[20px] h-[20px]" src="assets/arrow-logo.svg" alt="" />
         </div>
 
         <button
@@ -44,8 +44,8 @@
           class="rounded-full shadow-md p-3.5 cursor-pointer items-end"
           :class="{ 'bg-[#27272ae6]': isDarkMode }"
         >
-          <img x-show="!isDarkMode" src="/sun.svg" class="w-[20px] h-[20px]" alt="" />
-          <img x-show="isDarkMode" src="/moon.svg" class="w-[20px] h-[20px]" alt="" />
+          <img x-show="!isDarkMode" src="assets/sun.svg" class="w-[20px] h-[20px]" alt="" />
+          <img x-show="isDarkMode" src="assets/moon.svg" class="w-[20px] h-[20px]" alt="" />
         </button>
       </div>
 
@@ -59,7 +59,7 @@
       >
         <div class="flex justify-between">
           <div class="text-accent-primary">Navigation</div>
-          <img @click="toggleMobileNavigationMenu" src="/close-logo.svg" alt="" />
+          <img @click="toggleMobileNavigationMenu" src="assets/close-logo.svg" alt="" />
         </div>
 
         <div class="flex flex-col text-accent-primary mt-5">
@@ -77,14 +77,16 @@
     <div x-show="isCommandDialogOpen" x-transition class="fixed inset-0 flex items-center justify-center z-20">
       <div class="h-fit bg-bkg w-[90%] md:w-[40%] border border-neutral-700 rounded-xl">
        <div class="flex items-center border-b-2 border-border px-2">
-        <img class="h-6" :src="isDarkMode ? '/search-icon-white.svg' : '/search-icon-black.svg'" alt="" />
+        <img class="h-6" :src="isDarkMode ? 'assets/search-icon-white.svg' : 'assets/search-icon-black.svg'" alt="" />
         <input type="text" placeholder="Type a command or search" class="p-4 w-full bg-bkg text-content focus:outline-none text-xl">
-        <img class="h-5 cursor-pointer" @click="toggleCommandDialog" src="/close-logo.svg" alt="">
+        <img class="h-5 cursor-pointer" @click="toggleCommandDialog" src="assets/close-logo.svg" alt="">
        </div>
 
        <div class="p-1">
           <h1 class="text-content text-xl p-2.5">Actions</h1>
-          <div @click="printCV" class="p-2.5 cursor-pointer rounded-md text-accent-primary hover:bg-border">Print</div>
+          <div  class="p-2.5 cursor-pointer rounded-md text-accent-primary hover:bg-border">
+            <a href="assets/Puzant Resume.pdf" download>Download CV</a>
+          </div>
         </div>
 
         <div class="p-1">
@@ -121,7 +123,7 @@
 
           <img
             class="h-[112px] w-[112px] rounded-xl object-cover"
-            src="/profile-image.png"
+            src="assets/profile-image.png"
             alt=""
           />
         </div>
@@ -132,28 +134,28 @@
             href="mailto:pbakjejian@hotmail.com"
             target="_blank"
           >
-            <img :src="isDarkMode ? '/mail-dark-logo.svg' : '/mail-logo.svg'" alt="" />
+            <img :src="isDarkMode ? 'assets/mail-dark-logo.svg' : 'assets/mail-logo.svg'" alt="" />
           </a>
           <a
             class="border border-accent-secondary/25 p-1.5 rounded-md"
             href="tel:+96176156119"
             target="_blank"
           >
-            <img :src="isDarkMode ? '/mobile-dark-logo.svg' : '/mobile-logo.svg'" alt="" />
+            <img :src="isDarkMode ? 'assets/mobile-dark-logo.svg' : 'assets/mobile-logo.svg'" alt="" />
           </a>
           <a
             class="border border-accent-secondary/25 p-1.5 rounded-md"
             href="https://www.linkedin.com/in/puzant-b-006426108/"
             target="_blank"
           >
-            <img :src="isDarkMode ? '/linkedin-dark-logo.svg' : '/linkedin-logo.svg'" alt="" />
+            <img :src="isDarkMode ? 'assets/linkedin-dark-logo.svg' : 'assets/linkedin-logo.svg'" alt="" />
           </a>
           <a
             class="border border-accent-secondary/25 p-1.5 rounded-md"
             href="https://github.com/puzant"
             target="_blank"
           >
-            <img :src="isDarkMode ? '/github-dark-logo.svg' : '/github-logo.svg'" alt="" />
+            <img :src="isDarkMode ? 'assets/github-dark-logo.svg' : 'assets/github-logo.svg'" alt="" />
           </a>
         </div>
       </section>
@@ -299,7 +301,7 @@
                     class="flex justify-center items-center transition ease-in-out delay-100 absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity"
                   >
                     <div class="hidden group-hover:block bg-white rounded-md shadod-md px-2 py-1">
-                      <img src="/link-icon.svg" alt="" />
+                      <img src="assets/link-icon.svg" alt="" />
                     </div>
                   </div>
                 </a>
@@ -325,7 +327,7 @@
       </section>
 
       <div @click="toggleCommandDialog" class="fixed bottom-4 right-4 border border-border rounded-full shadow-xl block md:hidden p-4 bg-bkg">
-        <img :src="isDarkMode ? '/command-dark-logo.svg' : '/command-logo.svg'" alt="" />
+        <img :src="isDarkMode ? 'assets/command-dark-logo.svg' : 'assets/command-logo.svg'" alt="" />
       </div>
 
       <!-- command toggle notice -->
