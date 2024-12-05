@@ -76,27 +76,43 @@
     <!-- command dialog -->
     <div x-show="isCommandDialogOpen" x-transition class="fixed inset-0 flex items-center justify-center z-20">
       <div class="h-fit bg-bkg w-[90%] md:w-[40%] border border-neutral-700 rounded-xl">
-       <div class="flex items-center border-b-2 border-border px-2">
-        <img class="h-6" :src="isDarkMode ? 'assets/search-icon-white.svg' : 'assets/search-icon-black.svg'" alt="" />
-        <input type="text" placeholder="Type a command or search" class="p-4 w-full bg-bkg text-content focus:outline-none text-xl">
-        <img class="h-5 cursor-pointer" @click="toggleCommandDialog" src="assets/close-logo.svg" alt="">
-       </div>
-
-       <div class="p-1">
-          <h1 class="text-content text-xl p-2.5">Actions</h1>
-          <a href="assets/pdf/resume.pdf" download>
-            <div  class="p-2.5 cursor-pointer rounded-md text-accent-primary hover:bg-border">Download CV</div>
-          </a>
+        
+        <div class="flex items-center border-b-2 border-border px-2">
+          <img class="h-6" :src="isDarkMode ? 'assets/search-icon-white.svg' : 'assets/search-icon-black.svg'" alt="" />
+          <input x-model="searchQuery" type="text" placeholder="Type a command or search" class="p-4 w-full bg-bkg text-content focus:outline-none text-xl">
+          <img class="h-5 cursor-pointer" @click="toggleCommandDialog" src="assets/close-logo.svg" alt="">
         </div>
 
-        <div class="p-1">
-          <h1 class="text-content text-xl p-2.5">Links</h1>
+        <div x-show="filteredActions.length > 0" class="p-1">
+          <h1 class="text-content text-xl p-2.5">Actions</h1>
+
           <div class="flex flex-col">
-            <template x-for="link in links">
-              <a :href="link.url" target="_blank" class="p-2.5 cursor-pointer rounded-md text-accent-primary hover:bg-border" x-text="link.name"></a>
+            <template x-for="action in filteredActions" :key="action.name">
+              <div 
+                class="p-2.5 cursor-pointer rounded-md text-accent-primary hover:bg-border" 
+                @click="handleAction(action)"
+              >
+                <span x-text="action.name"></span>
+              </div>
             </template>
           </div>
         </div>
+
+        <div x-show="filteredLinks.length > 0" class="p-1">
+          <h1 class="text-content text-xl p-2.5">Links</h1>
+          <div class="flex flex-col">
+            <template x-for="link in filteredLinks">
+              <a 
+                :href="link.url" 
+                x-text="link.name"
+                target="_blank" 
+                class="p-2.5 cursor-pointer rounded-md text-accent-primary hover:bg-border">
+              </a>
+            </template>
+          </div>
+        </div>
+        
+        <div x-show="filteredActions.length === 0 && filteredLinks.length === 0" class="text-white text-xl text-center p-2.5">No results found</div>
       </div>
     </div>
 

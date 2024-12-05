@@ -15,6 +15,7 @@ export default function app() {
     isDarkMode: false,
     isOpen: false,
     body: document.body,
+    searchQuery: '',
 
     initTheme() {
       this.isLoading = true
@@ -56,6 +57,32 @@ export default function app() {
 
         rootElement.setAttribute('data-theme', newTheme);
         this.isDarkMode = true;
+      }
+    },
+
+    get filteredLinks() {
+      if (this.searchQuery.trim() === '') return this.items.links
+      
+      return this.items.links.filter(link =>
+        link.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+      );
+    },
+
+    get filteredActions() {
+      if (this.searchQuery.trim() === '') {
+        return this.items.actions;
+      }
+      return this.items.actions.filter(action =>
+        action.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+      );
+    },
+
+    handleAction(item) {
+      if (item.action === 'download') {
+        const link = document.createElement('a');
+        link.href = item.url;
+        link.download = true;
+        link.click();
       }
     },
 
@@ -114,10 +141,15 @@ export default function app() {
       { name: 'Skills', ref: '#skills' },
       { name: 'Portfolio', ref: '#portfolio' },
     ],
-    links: [
-      {name: 'Linkedin', url: 'https://www.linkedin.com/in/puzant-b-006426108/'},
-      {name: 'Github', url: 'https://github.com/puzant'},
-      {name: 'X', url: 'https://x.com/puzantBakjejian'},
-    ]
+    items: {
+      actions: [
+        { name: 'Download CV', url: 'assets/pdf/resume.pdf', action: 'download' },
+      ],
+      links: [
+        {name: 'Linkedin', url: 'https://www.linkedin.com/in/puzant-b-006426108/'},
+        {name: 'Github', url: 'https://github.com/puzant'},
+        {name: 'X', url: 'https://x.com/puzantBakjejian'},
+      ]
+    },
   };
 }
