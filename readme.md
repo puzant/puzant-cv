@@ -18,11 +18,11 @@
 
 ## Preview
 ### Desktop
-![app-screenshot](./public/project-screenshot-1.png)
+![app-screenshot](./public/assets/project-screenshot-1.png)
 
 ### Mobile
-![app-screenshot](./public/app-screenshot-2.png)
-![app-screenshot-2](./public/app-screenshot-3.png)  
+![app-screenshot](./public/assets/app-screenshot-2.png)
+![app-screenshot-2](./public/assets/app-screenshot-3.png)  
 
 ## 🚀 Features 
 - 📱 Responsive Design: The CV is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.
